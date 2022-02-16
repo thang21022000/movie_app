@@ -6,9 +6,9 @@ import {
     Route,
   } from "react-router-dom";
 
-import Home from '../components/pages/Home'
-import Detail from '../components/pages/Detail'
-import Catalog from '../components/pages/Catalog'
+import Home from '../pages/Home'
+import Detail from '../pages/Detail'
+import Catalog from '../pages/Catalog'
 
 
 function RoutesMain() {
@@ -17,20 +17,20 @@ function RoutesMain() {
             <Routes>
                 <Route 
                     path='/:category/search/:keyword' 
-                    component = {Catalog}
+                    element = {<Catalog/>}
                 />
                 <Route 
                     path='/:category/:id' 
-                    component = {Detail}
+                    element = {<Detail/>}
                 />
                 <Route 
                     path='/:category' 
-                    component = {Catalog}
+                    element = {<Catalog/>}
                 />
                 <Route 
                     path='/'
                     exact 
-                    component = {Home}
+                    element = {<Home/>}
                 />
             </Routes>
         </Router>

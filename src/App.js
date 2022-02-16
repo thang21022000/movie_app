@@ -6,26 +6,39 @@ import {  BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
-import Home from './components/pages/Home'
-import Detail from './components/pages/Detail'
-import Catalog from './components/pages/Catalog'
+import Home from './pages/Home'
+import Detail from './pages/Detail'
+import Catalog from './pages/Catalog'
+
 import RoutesMain from './config/RoutesMain';
 
 function App() {
   return (
     <BrowserRouter>
-      {/* <Route  render = { () => (
-        <>
-          <Header />
-          <RoutesMain />
-          <Footer />
-        </>
-      )} /> */}
-      <Header />
-      <Routes>
-        <Route path="/" element={<RoutesMain />} />
-      </Routes>
-      <Footer></Footer>
+      <>
+        <Header />
+          <Routes>
+              <Route 
+                  path='/:category/search/:keyword' 
+                  element = {<Catalog/>}
+              />
+              <Route 
+                  path='/:category/:id' 
+                  element = {<Detail/>}
+              />
+              <Route 
+                  path='/:category' 
+                  element = {<Catalog/>}
+              />
+              <Route 
+                  path='/'
+                  exact 
+                  element = {<Home/>}
+              />
+          </Routes>
+        <Footer/>
+      </>
+     
     </BrowserRouter>
   );
 }

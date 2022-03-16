@@ -42,7 +42,7 @@ export const ModalContent = props => {
 }
 
 ModalContent.propTypes = {
-    onClose: propTypes.func,
+    onClose: PropTypes.func,
 }
 
 export default Modal

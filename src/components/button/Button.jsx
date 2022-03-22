@@ -5,7 +5,7 @@ import './button.scss'
 
 const Button = props => {
   return (
-    <button className={`btn ${props.className}`} onclick={props.onclick ? () => props.onclick : null}>
+    <button className={`btn ${props.className}`} onClick={props.onClick ? () => props.onClick() : null}>
         {props.children}
     </button>
   )
@@ -15,7 +15,7 @@ export const OutLineButton = props => {
     return (
         <Button
             className = {`btn-outline ${props.className}`}
-            onclick={props.onclick ? () => props.onclick : null}
+            onClick={props.onClick ? () => props.onClick() : null}
         >
             {props.children}
             
@@ -24,7 +24,7 @@ export const OutLineButton = props => {
 }   
 
 Button.propTypes = {
-    onclick: PropTypes.func
+    onClick: PropTypes.func
 }
 
 export default Button

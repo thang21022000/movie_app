@@ -7,7 +7,7 @@ import {  BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Home from './pages/Home'
-import Detail from './pages/Detail'
+import Detail from './pages/detail/Detail'
 import Catalog from './pages/Catalog'
 
 import RoutesMain from './config/RoutesMain';
